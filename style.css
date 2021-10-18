@@ -10,7 +10,7 @@ body {
   background-color: rgb(245, 245, 245);
 }
 
-nav {
+/* nav {
   width: 100vw;
   height: 100px;
   display: flex;
@@ -38,7 +38,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-}
+} */
 
 header {
   width: 100vw;
@@ -154,8 +154,12 @@ footer {
   color: rgb(77, 77, 77);
 }
 
-@media (min-width: 576px) {
+@media (max-width: 575.98px) {
   .data .cases {
-    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .data .content h1 {
+    font-size: 3rem;
   }
 }
