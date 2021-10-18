@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "crimson pro";
+  overflow-x: hidden;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+}
+
+nav {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-around;
+}
+
+.fixed {
+  position: fixed;
+}
+
+nav h3 {
+  font-size: 2rem;
+}
+
+nav ul {
+  display: flex;
+  font-size: 1.3rem;
+}
+
+nav ul li {
+  padding: 0 1em;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+header {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 5rem;
+  color: rgb(39, 39, 39);
+  text-align: center;
+}
+
+.data {
+  width: 90vw;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.text {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text h1 {
+  font-size: 3rem;
+  color: rgb(54, 54, 54);
+}
+
+.data .content {
+  padding: 1rem;
+  background-color: rgb(243, 250, 255);
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  transition: 0.5s ease-in;
+}
+
+.data .content:hover {
+  box-shadow: 0 0 10px rgb(143, 143, 143, 0.2);
+  cursor: pointer;
+}
+
+.data .content img {
+  display: flex;
+  width: 100%;
+}
+
+.data .content h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.data .cases {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.data .cases .case {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 2em;
+  text-align: center;
+}
+
+.data .cases .case h4 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.data .cases .case h2 {
+  font-size: 3rem;
+}
+
+.forms {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(143, 143, 143, 0.3);
+}
+
+.my-input {
+  padding: 0.5rem 0;
+  width: 100%;
+  outline: none;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid rgb(145, 145, 145);
+}
+
+footer {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: rgb(77, 77, 77);
+}
+
+@media (min-width: 576px) {
+  .data .cases {
+    width: 100%;
+  }
+}
