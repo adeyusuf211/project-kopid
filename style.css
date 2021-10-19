@@ -1,44 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "crimson pro";
   overflow-x: hidden;
 }
 
 body {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(11, 0, 32);
 }
-
-/* nav {
-  width: 100vw;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  background-color: white;
-  justify-content: space-around;
-}
-
-.fixed {
-  position: fixed;
-}
-
-nav h3 {
-  font-size: 2rem;
-}
-
-nav ul {
-  display: flex;
-  font-size: 1.3rem;
-}
-
-nav ul li {
-  padding: 0 1em;
-}
-
-nav ul li a {
-  text-decoration: none;
-} */
 
 header {
   width: 100vw;
@@ -46,43 +18,86 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(6, 0, 19);
+  font-family: "QuickSand";
+  font-weight: 700;
 }
 
-header h1 {
-  font-size: 5rem;
-  color: rgb(39, 39, 39);
-  text-align: center;
+header .head-body {
+  width: 90vw;
+  padding: 3em;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+}
+
+header .head-body h1 {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+}
+
+header .head-body h3 {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+
+.forms {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  transform: translateY(-60px);
+}
+
+.form {
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(143, 143, 143, 0.3);
+  display: flex;
+}
+
+.my-input {
+  padding: 0.5rem 0;
+  width: 100%;
+  outline: none;
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  border-bottom: 1px solid rgb(145, 145, 145);
+  color: white;
 }
 
 .data {
   width: 90vw;
   margin: 20px auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .text {
   width: 90vw;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .text h1 {
   font-size: 3rem;
-  color: rgb(54, 54, 54);
+  color: rgb(255, 255, 255);
 }
 
 .data .content {
   padding: 1rem;
-  background-color: rgb(243, 250, 255);
+  background-color: rgb(6, 0, 19);
   border-radius: 5px;
   width: 100%;
   font-size: 1.5rem;
   margin: 10px 0;
   transition: 0.5s ease-in;
+  color: white;
 }
 
 .data .content:hover {
-  box-shadow: 0 0 10px rgb(143, 143, 143, 0.2);
+  box-shadow: 0 0 20px rgb(143, 143, 143, 0.2);
   cursor: pointer;
 }
 
@@ -102,46 +117,33 @@ header h1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
+  padding: 1em;
 }
 
 .data .cases .case {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: rgb(6, 0, 19);
   padding: 2em;
   text-align: center;
+  transition: 0.5s ease-in;
+}
+
+.data .cases .case:hover {
+  box-shadow: 0 0 20px rgb(143, 143, 143, 0.2);
+  cursor: pointer;
 }
 
 .data .cases .case h4 {
   font-size: 1.5rem;
   margin: 10px 0;
+  color: white;
 }
 
 .data .cases .case h2 {
   font-size: 3rem;
-}
-
-.forms {
-  width: 90vw;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.form {
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgb(143, 143, 143, 0.3);
-}
-
-.my-input {
-  padding: 0.5rem 0;
-  width: 100%;
-  outline: none;
-  font-size: 1.2rem;
-  border: none;
-  border-bottom: 1px solid rgb(145, 145, 145);
+  color: white;
 }
 
 footer {
@@ -150,8 +152,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  color: rgb(77, 77, 77);
+  background-color: rgb(6, 0, 19);
+  color: rgb(255, 255, 255);
 }
 
 @media (max-width: 575.98px) {
@@ -161,5 +163,9 @@ footer {
 
   .data .content h1 {
     font-size: 3rem;
+  }
+
+  .text {
+    text-align: center;
   }
 }
