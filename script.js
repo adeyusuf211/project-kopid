@@ -10,6 +10,12 @@ function val() {
                                 <img src="${data.countryInfo.flag}" alt="">
                                 <h1>${data.country}</h1>
                             </div>
+                            <div class="populations">
+                                <div class="case-population">
+                                    <h4>Jumlah Penduduk</h4>
+                                    <h2>${data.population.toLocaleString('id-ID', '.')}</h2>
+                                </div>
+                            </div>
                             <div class="cases">
                                 <div class="case">
                                     <h4>Total Kasus</h4>

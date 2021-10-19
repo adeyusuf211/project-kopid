@@ -112,6 +112,38 @@ header .head-body h3 {
   margin: 20px 0;
 }
 
+.data .populations {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+}
+
+.data .populations .case-population {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(20, 20, 20);
+  padding: 2em;
+  text-align: center;
+  transition: 0.5s ease-in;
+}
+
+.data .populations .case-population:hover {
+  box-shadow: 0 0 20px rgb(143, 143, 143, 0.2);
+  cursor: pointer;
+}
+
+.data .populations .case-population h4 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: white;
+}
+
+.data .populations .case-population h2 {
+  font-size: 3rem;
+  color: white;
+}
+
 .data .cases {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -145,6 +177,30 @@ header .head-body h3 {
   color: white;
 }
 
+.credits {
+  width: 90vw;
+  padding: 0 20px;
+  margin: 0 auto;
+  margin: 20px auto;
+}
+
+.credits .credit-title h1 {
+  font-size: 3rem;
+  color: white;
+}
+
+.credits .credit-name h3 {
+  color: white;
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.credits .credit-name h3 > a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
 footer {
   width: 100vw;
   height: 10vh;
@@ -173,6 +229,10 @@ footer {
   }
 
   .text {
+    text-align: center;
+  }
+
+  .credits {
     text-align: center;
   }
 }
