@@ -6,10 +6,11 @@
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: "QuickSand";
 }
 
 body {
-  background-color: rgb(11, 0, 32);
+  background-color: rgb(10, 10, 10);
 }
 
 header {
@@ -18,16 +19,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(6, 0, 19);
-  font-family: "QuickSand";
-  font-weight: 700;
+  background-color: rgb(10, 10, 10);
 }
 
 header .head-body {
   width: 90vw;
   padding: 3em;
   border-radius: 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(20, 20, 20);
+  font-weight: 700;
 }
 
 header .head-body h1 {
@@ -51,7 +51,7 @@ header .head-body h3 {
 
 .form {
   padding: 20px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(20, 20, 20);
   border-radius: 10px;
   box-shadow: 0 0 10px rgb(143, 143, 143, 0.3);
   display: flex;
@@ -87,7 +87,7 @@ header .head-body h3 {
 
 .data .content {
   padding: 1rem;
-  background-color: rgb(6, 0, 19);
+  background-color: rgb(20, 20, 20);
   border-radius: 5px;
   width: 100%;
   font-size: 1.5rem;
@@ -113,7 +113,6 @@ header .head-body h3 {
 }
 
 .data .cases {
-  margin: 20px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
@@ -124,7 +123,7 @@ header .head-body h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(6, 0, 19);
+  background-color: rgb(20, 20, 20);
   padding: 2em;
   text-align: center;
   transition: 0.5s ease-in;
@@ -152,11 +151,19 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(6, 0, 19);
+  background-color: rgb(20, 20, 20);
   color: rgb(255, 255, 255);
 }
 
 @media (max-width: 575.98px) {
+  header .head-body {
+    text-align: center;
+  }
+
+  header .head-body h3 {
+    font-size: 1.2rem;
+  }
+
   .data .cases {
     grid-template-columns: 1fr;
   }

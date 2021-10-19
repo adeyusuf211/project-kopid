@@ -17,7 +17,7 @@ function val() {
                                 </div>
                                 <div class="case">
                                     <h4>Total Sembuh</h4>
-                                    <h2>${data.recovered.toLocaleString()}</h2>
+                                    <h2>${data.recovered.toLocaleString('id-ID', '.')}</h2>
                                 </div>
                                 <div class="case">
                                     <h4>Total Kematian</h4>
