@@ -40,8 +40,8 @@ function val() {
                             </div>
                             <div class="cases">
                                 <div class="case">
-                                    <h4>Total Kasus / Total Penduduk (%)</h4>
-                                    <h2>${ (parseFloat(data.cases) / parseFloat(data.population)).toFixed(2) } %</h2>
+                                    <h4>Total Kasus / Jumlah Penduduk (%)</h4>
+                                    <h2>${ (parseFloat(data.cases) / parseFloat(data.population) * parseFloat(100)).toFixed(2) } %</h2>
                                 </div>
                                 <div class="case">
                                     <h4>Angka Kesembuhan (%)</h4>
