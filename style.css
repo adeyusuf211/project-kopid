@@ -32,12 +32,14 @@ header .head-body {
 
 header .head-body h1 {
   font-size: 5em;
+  letter-spacing: 3px;
   color: rgb(230, 230, 230);
   font-family: "Alfa Slab One";
 }
 
 header .head-body h3 {
   font-size: 3em;
+  letter-spacing: 5px;
   color: rgb(255, 255, 255);
   font-family: "Alfa Slab One";
 }
