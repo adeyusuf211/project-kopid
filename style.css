@@ -240,7 +240,7 @@ footer {
   color: rgb(255, 255, 255);
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
   header .head-body {
     text-align: center;
   }
@@ -251,6 +251,14 @@ footer {
 
   .data .cases {
     grid-template-columns: 1fr;
+  }
+
+  .data .cases .case h2 {
+    font-size: 2.5rem;
+  }
+
+  .data .populations .case-population h2 {
+    font-size: 2.5rem;
   }
 
   .data .content h1 {
