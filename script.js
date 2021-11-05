@@ -92,7 +92,7 @@ function cards(data) {
                     <h2>${ (parseFloat(data.active) / parseFloat(data.cases) * parseFloat(100)).toFixed(2) } %</h2>
                 </div>
                 <div class="case">
-                    <h4>Kritis.</h4>
+                    <h4>Kritis</h4>
                     <h2>${ parseFloat(data.critical).toLocaleString('id-ID', '.') }</h2>
                 </div>
             </div>
