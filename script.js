@@ -29,7 +29,7 @@ function covidData() {
 }
 
 function cards(data) {
-    const activeCases = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID'); 
+    const activeCases = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID').replace('-', ''); 
     return `
             <div class="content">
                 <img src="${data.countryInfo.flag}" alt="${data.country}">
@@ -116,7 +116,7 @@ function cards(data) {
 }
 
 function allCards(data) {
-    const activeCases = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID'); 
+    const activeCases = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID').replace('-', ''); 
     return `
             <div class="populations">
                 <div class="case-population">
@@ -168,7 +168,7 @@ function allCards(data) {
             </div>
             <div class="cases">
                 <div class="case">
-                    <h4>Kasus Aktif</h4>
+                    <h4>Jumlah Kasus Aktif</h4>
                     <h2>${ data.active.toLocaleString('id-ID', '.') }</h2>
                 </div>
                 <div class="case">
@@ -177,7 +177,7 @@ function allCards(data) {
                 </div>
                 <div class="case">
                     <h4>Kasus Aktif (+/-)</h4>
-                    <h2>${ activeCases < 0 ? `- ${activeCases}` : activeCases > 0 ? `+ ${activeCases}` : '0' }</h2>
+                    <h2>${ activeCases < 0 ? `+ ${activeCases}` : activeCases > 0 ? `- ${activeCases}` : '0' }</h2>
                 </div>
             </div>
             <div class="cases">
