@@ -29,6 +29,7 @@ function covidData() {
 }
 
 function cards(data) {
+    const activeCases = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID'); 
     return `
             <div class="content">
                 <img src="${data.countryInfo.flag}" alt="${data.country}">
@@ -37,7 +38,7 @@ function cards(data) {
             <div class="populations">
                 <div class="case-population">
                     <h4>Jumlah Penduduk</h4>
-                    <h2>${data.population.toLocaleString('id-ID', '.')}</h2>
+                    <h2>${data.population.toLocaleString('id-ID')}</h2>
                 </div>
             </div>
             <div class="cases">
@@ -47,25 +48,25 @@ function cards(data) {
                 </div>
                 <div class="case">
                     <h4>Total Sembuh</h4>
-                    <h2>${data.recovered.toLocaleString('id-ID', '.')}</h2>
+                    <h2>${data.recovered.toLocaleString('id-ID')}</h2>
                 </div>
                 <div class="case">
                     <h4>Total Kematian</h4>
-                    <h2>${data.deaths.toLocaleString('id-ID', '.')}</h2>
+                    <h2>${data.deaths.toLocaleString('id-ID')}</h2>
                 </div>
             </div>
             <div class="cases">
                 <div class="case">
                     <h4>Kasus Hari Ini</h4>
-                    <h2>${data.todayCases.toLocaleString('id-ID', '.')}</h2>
+                    <h2>${data.todayCases.toLocaleString('id-ID')}</h2>
                 </div>
                 <div class="case">
                     <h4>Kesembuhan Hari Ini</h4>
-                    <h2>${data.todayRecovered.toLocaleString('id-ID', '.')}</h2>
+                    <h2>${data.todayRecovered.toLocaleString('id-ID')}</h2>
                 </div>
                 <div class="case">
                     <h4>Kematian Hari Ini</h4>
-                    <h2>${data.todayDeaths.toLocaleString('id-ID', '.')}</h2>
+                    <h2>${data.todayDeaths.toLocaleString('id-ID')}</h2>
                 </div>
             </div>
             <div class="cases">
@@ -84,7 +85,7 @@ function cards(data) {
             </div>
             <div class="cases">
                 <div class="case">
-                    <h4>Kasus Aktif</h4>
+                    <h4>Jumlah Kasus Aktif</h4>
                     <h2>${ data.active.toLocaleString('id-ID', '.') }</h2>
                 </div>
                 <div class="case">
@@ -92,8 +93,8 @@ function cards(data) {
                     <h2>${ (parseFloat(data.active) / parseFloat(data.cases) * parseFloat(100)).toFixed(2) } %</h2>
                 </div>
                 <div class="case">
-                    <h4>Kritis</h4>
-                    <h2>${ parseFloat(data.critical).toLocaleString('id-ID', '.') }</h2>
+                    <h4>Kasus Aktif (+/-)</h4>
+                    <h2>${ activeCases < 0 ? `- ${activeCases}` : activeCases > 0 ? `+ ${activeCases}` : '0' }</h2>
                 </div>
             </div>
             <div class="cases">
@@ -115,6 +116,7 @@ function cards(data) {
 }
 
 function allCards(data) {
+    const activeCases = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID'); 
     return `
             <div class="populations">
                 <div class="case-population">
@@ -174,8 +176,8 @@ function allCards(data) {
                     <h2>${ (parseFloat(data.active) / parseFloat(data.cases) * parseFloat(100)).toFixed(2) } %</h2>
                 </div>
                 <div class="case">
-                    <h4>Kritis</h4>
-                    <h2>${ parseFloat(data.critical).toLocaleString('id-ID', '.') }</h2>
+                    <h4>Kasus Aktif (+/-)</h4>
+                    <h2>${ activeCases < 0 ? `- ${activeCases}` : activeCases > 0 ? `+ ${activeCases}` : '0' }</h2>
                 </div>
             </div>
             <div class="cases">
