@@ -245,12 +245,20 @@ footer {
     text-align: center;
   }
 
+  header .head-body h1 {
+    font-size: 2.5em;
+  }
+
   header .head-body h3 {
     font-size: 1.2rem;
   }
 
   .data .cases {
     grid-template-columns: 1fr;
+  }
+
+  .data {
+    padding: 0.3rem;
   }
 
   .data .cases .case h2 {
