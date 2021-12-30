@@ -94,7 +94,7 @@ function cards(data) {
                 </div>
                 <div class="case">
                     <h4>Kasus Aktif (+/-)</h4>
-                    <h2>${ activeCases < 0 ? `- ${activeCases}` : activeCases > 0 ? `+ ${activeCases}` : '0' }</h2>
+                    <h2>${ activeCases < 0 ? `+ ${activeCases}` : activeCases > 0 ? `- ${activeCases}` : '0' }</h2>
                 </div>
             </div>
             <div class="cases">
