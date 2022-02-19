@@ -240,6 +240,10 @@ footer {
   color: rgb(255, 255, 255);
 }
 
+footer h3 > a {
+  color: white;
+}
+
 @media (max-width: 576px) {
   header .head-body {
     text-align: center;
