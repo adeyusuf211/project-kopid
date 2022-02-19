@@ -29,7 +29,6 @@ function covidData() {
 }
 
 function cards(data) {
-    const activeCases = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID').replace('-', ''); 
     return `
             <div class="content">
                 <img src="${data.countryInfo.flag}" alt="${data.country}">
@@ -93,8 +92,8 @@ function cards(data) {
                     <h2>${ (parseFloat(data.active) / parseFloat(data.cases) * parseFloat(100)).toFixed(2) } %</h2>
                 </div>
                 <div class="case">
-                    <h4>Kasus Aktif (+/-)</h4>
-                    <h2>${ activeCases < 0 ? `+ ${activeCases}` : activeCases > 0 ? `- ${activeCases}` : '0' }</h2>
+                    <h4>Kritis</h4>
+                    <h2>${ data.critical }</h2>
                 </div>
             </div>
             <div class="cases">
@@ -116,7 +115,9 @@ function cards(data) {
 }
 
 function allCards(data) {
-    const activeCases = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID').replace('-', ''); 
+    // const todayCases    = data.todayCases.toLocaleString('id-ID', '.');
+    // const substractCase = parseFloat(data.todayRecovered + data.todayDeaths).toLocaleString('id-ID').replace('-', '');
+    // const activeCases   = parseFloat(data.todayRecovered + data.todayDeaths - data.todayCases).toLocaleString('id-ID').replace('-', '');
     return `
             <div class="populations">
                 <div class="case-population">
@@ -176,8 +177,8 @@ function allCards(data) {
                     <h2>${ (parseFloat(data.active) / parseFloat(data.cases) * parseFloat(100)).toFixed(2) } %</h2>
                 </div>
                 <div class="case">
-                    <h4>Kasus Aktif (+/-)</h4>
-                    <h2>${ activeCases < 0 ? `+ ${activeCases}` : activeCases > 0 ? `- ${activeCases}` : '0' }</h2>
+                    <h4>Kritis</h4>
+                    <h2>${ data.critical }</h2>
                 </div>
             </div>
             <div class="cases">
