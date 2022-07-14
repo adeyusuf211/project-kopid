@@ -1,11 +1,15 @@
 import React, {useState} from "react";
-import { useEffect } from "react";
 import DataApi from "./DataApi";
+import LayoutDefault from './images/layout default.png'
+import Layout2x2 from './images/layout 2x2.png'
+import Layout3x3 from './images/layout 3x3.png'
 
 const Homepage = () => {
-  const [data, setData]       = useState([]);
+  const [data, setData]       = useState("");
   const [text, setText]       = useState("");
+  const [search, setSearch]   = useState("World");
   const [click, setClick]     = useState(false);
+  const [layout, setLayout]   = useState("default");
 
   const handleChange = (e) => {
     const finalText = e.target.value;
@@ -13,25 +17,38 @@ const Homepage = () => {
   };
 
   const handleClick = () => {
-    if(text.length > 0) {
-      fetch(`https://disease.sh/v3/covid-19/countries/${text}`)
-        .then((res) => res.json())
-        .then((hasil) => setData(hasil));
-    } else {
-      fetch(`https://disease.sh/v3/covid-19/all`)
-        .then((res) => res.json())
-        .then((hasil) => setData(hasil));
-    }
     setClick(true);
+    
+    fetch(`https://disease.sh/v3/covid-19/countries/${text}`)
+      .then((res) => {
+        if(res.ok) {
+          return res.json();
+        }
+        throw new Error(setSearch(`${text} cant found`))
+      })
+      .then((hasil) => setData(hasil))
+      .catch((error) => console.log(error));
+
+    text === "" ? setSearch("World") : setSearch(text);
   };
 
-  useEffect(() => {
+  if(text === "") {
     fetch(`https://disease.sh/v3/covid-19/all`)
-      .then((res) => res.json())
-      .then((hasil) => setData(hasil));
-  }, []);
+      .then((res) => {
+        if(res.ok) {
+          return res.json()
+        }
+        throw new Error(`Can't found`)
+      })
+      .then((hasil) => setData(hasil))
+      .catch((error) => console.log(error));
+  } 
 
-  
+  const changeLayout = (str) => str === "layout2" ? 
+  setLayout("layout2") 
+  : str === "layout3" ? setLayout("layout3") 
+  : setLayout("default");
+
     return (
       <div className="w-full h-full">
         <div className="relative">
@@ -51,12 +68,24 @@ const Homepage = () => {
               Search
             </button>
           </div>
-          {text === "" ? (
-            <h1 className="text-2xl my-3 text-slate-300">Data: semua</h1>
-          ) : (
-            <h1 className="text-2xl my-3 text-slate-300">Data: {text}</h1>
-          )}
-          <DataApi data={data} setData={setData} />
+          <h1 className="text-2xl my-3 text-slate-300">Data: {search}</h1>
+          <div className="w-full flex gap-3 justify-end">
+            <img src={LayoutDefault} 
+              className="w-6 h-6 cursor-pointer hidden lg:block md:block" 
+              onClick={() => changeLayout("default")}
+            />
+            <img
+              src={Layout2x2}
+              className="w-6 h-6 cursor-pointer hidden lg:block md:block"
+              onClick={() => changeLayout("layout2")}
+            />
+            <img
+              src={Layout3x3}
+              className="w-6 h-6 cursor-pointer hidden lg:block md:block"
+              onClick={() => changeLayout("layout3")}
+            />
+          </div>
+          <DataApi data={data} text={text} layout={layout} />
         </div>
       </div>
     );
