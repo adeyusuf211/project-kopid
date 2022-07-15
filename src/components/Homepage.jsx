@@ -26,7 +26,12 @@ const Homepage = () => {
         }
         throw new Error(setSearch(`${text} cant found`))
       })
-      .then((hasil) => setData(hasil))
+      .then((hasil) => {
+        const dataCountry = hasil.country.toLowerCase();
+        if(dataCountry) {
+          setData(hasil)
+        } 
+      })
       .catch((error) => console.log(error));
 
     text === "" ? setSearch("World") : setSearch(text);
@@ -44,8 +49,8 @@ const Homepage = () => {
       .catch((error) => console.log(error));
   } 
 
-  const changeLayout = (str) => str === "layout2" ? 
-  setLayout("layout2") 
+  const changeLayout = (str) => 
+  str === "layout2" ? setLayout("layout2") 
   : str === "layout3" ? setLayout("layout3") 
   : setLayout("default");
 
